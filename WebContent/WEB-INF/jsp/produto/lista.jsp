@@ -38,7 +38,14 @@
 				<td>${produto.preco}</td>
 				<td>${produto.descricao}</td>
 				<td>${produto.dataInicioVenda.time}</td>
-				<td>Não</td>
+				<c:choose>
+					<c:when test="${produto.usado}">
+						<td>Sim</td>
+					</c:when>
+					<c:otherwise>
+						<td>Não</td>
+					</c:otherwise>
+				</c:choose>
 				<td><a href="#" onclick="return removeProduto(${produto.id})">Remover</a></td>
 			</tr>
 		</c:forEach>
