@@ -46,7 +46,9 @@
 					<c:when test="${produto.usado}">
 						<td>Sim</td>
 					</c:when>
-					
+					<c:otherwise>
+						<td>Não</td>
+					</c:otherwise>
 				</c:choose>
 				<td><a href="#" onclick="return removeProduto(${produto.id})">Remover</a></td>
 			</tr>
