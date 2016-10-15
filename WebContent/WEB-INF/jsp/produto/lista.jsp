@@ -18,7 +18,7 @@
 			$("#produto" + id).remove();
 		}
 	</script>
-
+	<fmt:message key="mensagem.bemvindo" />
 	<h1>Produtos</h1>
 	<div id="mensagem"></div>
 	<table width="100%">
@@ -54,6 +54,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href='<c:url value="/produto/formulario"></c:url>'>Adicionar um produto</a>
+	<a href='<c:url value="/produto/formulario"></c:url>'><fmt:message key="mensagem.novoProduto"/></a>
 </body>
 </html>
