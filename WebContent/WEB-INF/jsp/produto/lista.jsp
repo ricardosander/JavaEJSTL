@@ -35,16 +35,18 @@
 			<tr id="produto${produto.id}">
 				<td>${st.count}</td>
 				<td>${produto.nome}</td>
-				<td>${produto.preco}</td>
+				<td>
+					<fmt:formatNumber value="${produto.preco}" type="currency" />
+				</td>
 				<td>${produto.descricao}</td>
-				<td>${produto.dataInicioVenda.time}</td>
+				<td>
+				<fmt:formatDate value="${produto.dataInicioVenda.time}" pattern="dd/MM/yyyy" />
+				</td>
 				<c:choose>
 					<c:when test="${produto.usado}">
 						<td>Sim</td>
 					</c:when>
-					<c:otherwise>
-						<td>Não</td>
-					</c:otherwise>
+					
 				</c:choose>
 				<td><a href="#" onclick="return removeProduto(${produto.id})">Remover</a></td>
 			</tr>
